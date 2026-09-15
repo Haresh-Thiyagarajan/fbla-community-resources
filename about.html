@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About This Project | Common Ground</title>
+  <meta name="description" content="How Common Ground was planned, researched, designed for accessibility, and tested.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23A3214F'/%3E%3Cpath d='M11 21l9-8 9 8v8H11z' fill='none' stroke='white' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js"></script>
+</head>
+<body data-page="about">
+
+  <!-- ===== SHARED HEADER (identical on every page except aria-current) ===== -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="utility-bar" id="top">
+    <div class="container utility-inner">
+      <p class="crisis-note"><strong>In crisis?</strong> Call or text <a href="tel:988">988</a>. For emergencies call <a href="tel:911">911</a>.</p>
+      <div class="display-controls" role="group" aria-label="Display settings">
+        <button type="button" class="util-btn" id="text-toggle" aria-pressed="false"><span class="state" aria-hidden="true"></span>Larger text</button>
+        <button type="button" class="util-btn" id="theme-toggle" aria-pressed="false"><span class="state" aria-hidden="true"></span>Dark mode</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle class="mark-bg" cx="20" cy="20" r="19"/>
+          <path class="mark-fg" d="M11 21l9-8 9 8v8H11z"/>
+          <path class="mark-fg" d="M20 29v-4.5a3.5 3.5 0 0 1 3.5-3.5"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Common Ground</span>
+          <span class="brand-sub">Maple Valley community resources</span>
+        </span>
+      </a>
+      <button type="button" class="btn btn-ghost btn-sm nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html">Browse resources</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a class="btn btn-primary nav-cta" href="get-help.html">Get help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== END SHARED HEADER ===== -->
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <div class="mascot-row" aria-hidden="true">
+          <svg class="mascot" focusable="false"><use href="#m-sprout"></use></svg>
+        </div>
+        <svg class="mascot mascot--float pos-left-top" aria-hidden="true" focusable="false"><use href="#m-ghost"></use></svg>
+        <svg class="mascot mascot--float pos-right-top" aria-hidden="true" focusable="false"><use href="#m-blob"></use></svg>
+        <h1 id="page-title">About this project</h1>
+        <p>How we planned, researched, designed, and tested Common Ground for the FBLA 2026–2027 Website Design event.</p>
+      </div>
+    </section>
+
+    <div class="container about-layout">
+
+      <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">On this page</h2>
+        <ol>
+          <li><a href="#process">Planning &amp; design process</a></li>
+          <li><a href="#sources">Sources &amp; research</a></li>
+          <li><a href="#accessibility">Accessibility statement</a></li>
+          <li><a href="#metrics">Success metrics</a></li>
+          <li><a href="#compatibility">Compatibility notes</a></li>
+        </ol>
+      </nav>
+
+      <div class="prose">
+
+        <!-- ============ PLANNING & DESIGN PROCESS ============ -->
+        <section id="process" aria-labelledby="process-title">
+          <h2 id="process-title">Planning &amp; design process</h2>
+          <p>Common Ground is a community resource website for health and human services. Our goal: a resident with a phone and a few spare minutes can find the right service, see what it costs, and know how to reach it.</p>
+
+          <!-- PHOTO SLOT 6 -->
+          <figure class="photo photo--wide">
+            <!-- REPLACE the div below with:
+                 <img src="images/about-planning-session.jpg" width="1600" height="900" loading="lazy"
+                      alt="Our student team sketching website wireframes with paper and sticky notes"> -->
+            <div class="photo-placeholder" role="img" aria-label="Our student team sketching website wireframes with paper and sticky notes">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg>
+              <span class="photo-file">about-planning-session.jpg</span>
+              <span class="photo-hint">Your team planning the site</span>
+            </div>
+          </figure>
+
+          <h3>Our process, step by step</h3>
+          <ol>
+            <li><strong>Research.</strong> We reviewed community health needs data and existing 211-style directories to learn which services residents look for most and where current sites fall short.</li>
+            <li><strong>Audiences and tasks.</strong> We defined three people to design for: a parent looking for affordable child care, an older adult who needs rides to appointments, and a teen looking for someone to talk to. Each became a test task.</li>
+            <li><strong>Site map and wireframes.</strong> We kept navigation to five destinations (Home, Browse resources, Events, Get help, About) and sketched every page at phone size first.</li>
+            <li><strong>Visual system.</strong> We chose a warm, friendly look so the site feels welcoming rather than clinical: a cream background, a berry primary color, leaf-green and sky-blue accents, a classic serif for headings, and friendly illustrated characters.</li>
+            <li><strong>Build.</strong> We hand-coded the site in HTML, CSS, and JavaScript with no frameworks or internet connection required. One stylesheet and one script serve every page, so the header, footer, type, and colors stay consistent.</li>
+            <li><strong>Test and refine.</strong> We checked each page at desktop, tablet, and phone widths, tested keyboard-only navigation, verified color contrast, and confirmed there are no console errors.</li>
+          </ol>
+
+          <h3>Key design decisions</h3>
+          <ul>
+            <li><strong>Search first.</strong> The home page puts a large search bar directly under the headline, because most visitors arrive with a specific need.</li>
+            <li><strong>Two ways to find help.</strong> Visitors who know what they want use the filterable directory. Visitors who feel unsure use the three-step guided flow, which leads to the same filtered results.</li>
+            <li><strong>Plain language.</strong> Categories use everyday words (“Food security”, “Jobs &amp; child care”), and every listing shows hours and cost.</li>
+            <li><strong>Crisis help on every page.</strong> The 988 and 911 numbers sit in the same spot on every page.</li>
+          </ul>
+        </section>
+
+        <!-- ============ SOURCES & RESEARCH ============ -->
+        <section id="sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources &amp; research</h2>
+          <p class="note">Placeholder citations in APA 7th edition format. Verify each source, update access details, and replace the local source with your own community’s data before submitting.</p>
+          <ol class="citations">
+            <li>988 Suicide &amp; Crisis Lifeline. (n.d.). <cite>About 988</cite>. https://988lifeline.org/</li>
+            <li>Google. (n.d.). <cite>Web Vitals</cite>. web.dev. https://web.dev/articles/vitals</li>
+            <li>Maple Valley County Health Department. (2026). <cite>Community health needs assessment</cite> [Placeholder: replace with your county’s report].</li>
+            <li>Pew Research Center. (n.d.). <cite>Mobile fact sheet</cite>. https://www.pewresearch.org/internet/fact-sheet/mobile/</li>
+            <li>U.S. Department of Health and Human Services, Office of Disease Prevention and Health Promotion. (n.d.). <cite>Social determinants of health</cite>. Healthy People 2030. https://health.gov/healthypeople/priority-areas/social-determinants-health</li>
+            <li>World Wide Web Consortium. (2018). <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite>. https://www.w3.org/TR/WCAG21/</li>
+          </ol>
+          <p>All organizations, phone numbers, addresses, and events on this site are fictional samples created for the competition.</p>
+        </section>
+
+        <!-- ============ ACCESSIBILITY STATEMENT ============ -->
+        <section id="accessibility" aria-labelledby="accessibility-title">
+          <h2 id="accessibility-title">Accessibility statement</h2>
+          <p>Common Ground is designed to meet the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA. If anything on this site is hard to use, contact us at <a href="mailto:hello@commonground.example">hello@commonground.example</a> or <a href="tel:+15555550100">(555) 555-0100</a>.</p>
+
+          <h3>Color contrast ratios</h3>
+          <p>WCAG AA requires at least 4.5:1 for normal text and 3:1 for large text and interface parts such as borders and focus outlines. Ratios below were calculated with the WCAG relative luminance formula.</p>
+          <div class="table-wrap" tabindex="0" role="region" aria-labelledby="contrast-caption">
+            <table class="data">
+              <caption id="contrast-caption">Contrast ratios for the light and dark themes</caption>
+              <thead>
+                <tr><th scope="col">Use</th><th scope="col">Light theme</th><th scope="col">Ratio</th><th scope="col">Dark theme</th><th scope="col">Ratio</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Body text on page</th>
+                  <td><span class="swatch" style="background:#2B1A22"></span>#2B1A22 on #FBF6EE</td><td>15.33:1</td>
+                  <td><span class="swatch" style="background:#F6EDE7"></span>#F6EDE7 on #1A1215</td><td>15.93:1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Body text on cards</th>
+                  <td>#2B1A22 on #FFFFFF</td><td>16.49:1</td>
+                  <td>#F6EDE7 on #2C2025</td><td>13.57:1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Secondary text</th>
+                  <td><span class="swatch" style="background:#5E4B54"></span>#5E4B54 on #FBF6EE</td><td>7.48:1</td>
+                  <td><span class="swatch" style="background:#CDBDC3"></span>#CDBDC3 on #1A1215</td><td>10.22:1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Primary button text</th>
+                  <td><span class="swatch" style="background:#A3214F"></span>#FFFFFF on #A3214F</td><td>7.27:1</td>
+                  <td><span class="swatch" style="background:#F08BB0"></span>#2A0915 on #F08BB0</td><td>7.86:1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Links on page</th>
+                  <td>#A3214F on #FBF6EE</td><td>6.76:1</td>
+                  <td>#F08BB0 on #1A1215</td><td>7.91:1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Text on berry band and top bar</th>
+                  <td><span class="swatch" style="background:#5E1034"></span>#FBF6EE on #5E1034</td><td>12.20:1</td>
+                  <td><span class="swatch" style="background:#3A0C21"></span>#FBF6EE on #3A0C21</td><td>15.56:1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form control borders</th>
+                  <td>#8C7A82 on #FFFFFF</td><td>4.02:1</td>
+                  <td>#8F7D85 on #2C2025</td><td>4.06:1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Keyboard focus outline</th>
+                  <td>#2B1A22 on #FBF6EE</td><td>15.33:1</td>
+                  <td>#F6EDE7 on #1A1215</td><td>15.93:1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Features we implemented</h3>
+          <ul>
+            <li>Semantic HTML landmarks (header, nav, main, footer) and one logical heading outline per page.</li>
+            <li>A “Skip to main content” link as the first item on every page.</li>
+            <li>A visible 3-pixel focus outline on every link, button, and form control, never removed.</li>
+            <li>Every control works with a keyboard alone, including filters, bookmarks, the calendar, and the guided flow.</li>
+            <li>Visible labels on every form field; filter groups use fieldsets and legends.</li>
+            <li>Result counts, bookmark changes, and calendar updates are announced to screen readers through live status messages.</li>
+            <li>Toggle buttons (dark mode, larger text, bookmarks, calendar view) report their on/off state with <code>aria-pressed</code>.</li>
+            <li>A “Larger text” setting enlarges all text by about 19%, and layouts reflow without horizontal scrolling at 200% browser zoom.</li>
+            <li>A dark theme with its own separately checked contrast ratios.</li>
+            <li>Information is never shown by color alone: categories are labeled in text, and selected chips show a checkmark.</li>
+            <li>Descriptive alternative text on every image, and decorative illustrations are hidden from screen readers.</li>
+            <li>Animation is limited to the small hero characters and turns off when a device is set to reduce motion.</li>
+            <li>Buttons and links are at least 40 pixels tall for easier tapping.</li>
+          </ul>
+
+          <h3>Known limitations</h3>
+          <ul>
+            <li>Phone links open a calling app only on devices that support calling.</li>
+            <li>Settings and saved resources last only for the current browser session by design.</li>
+          </ul>
+        </section>
+
+        <!-- ============ SUCCESS METRICS ============ -->
+        <section id="metrics" aria-labelledby="metrics-title">
+          <h2 id="metrics-title">Success metrics</h2>
+          <p>We will know Common Ground is working when residents find help quickly on any device. These are the measurable indicators and targets we would track after launch.</p>
+          <div class="table-wrap" tabindex="0" role="region" aria-labelledby="metrics-caption">
+            <table class="data">
+              <caption id="metrics-caption">Success metrics, targets, and how we measure them</caption>
+              <thead>
+                <tr><th scope="col">Indicator</th><th scope="col">Target</th><th scope="col">How we measure it</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Task success rate</th><td>90% or more</td><td>Moderated tests with at least 5 residents per round, using tasks such as “Find free food open on Saturday.”</td></tr>
+                <tr><th scope="row">Time to find a resource</th><td>Under 60 seconds</td><td>Median time per task during usability tests.</td></tr>
+                <tr><th scope="row">Bounce rate (home page)</th><td>Below 40%</td><td>Privacy-friendly analytics: share of visits that leave without a second interaction.</td></tr>
+                <tr><th scope="row">Search click-through rate</th><td>60% or more</td><td>Share of searches followed by a click on a phone number, email, or saved listing.</td></tr>
+                <tr><th scope="row">Zero-result searches</th><td>Below 10%</td><td>Share of searches or filter combinations that return no listings; reviewed monthly to add keywords.</td></tr>
+                <tr><th scope="row">Guided flow completion</th><td>75% or more</td><td>Share of visitors who start Get Help and reach their results.</td></tr>
+                <tr><th scope="row">Core Web Vitals: Largest Contentful Paint (LCP)</th><td>2.5 seconds or less</td><td>Measured at the 75th percentile of page loads with Lighthouse and field data.</td></tr>
+                <tr><th scope="row">Core Web Vitals: Interaction to Next Paint (INP)</th><td>200 milliseconds or less</td><td>Same as above.</td></tr>
+                <tr><th scope="row">Core Web Vitals: Cumulative Layout Shift (CLS)</th><td>0.1 or less</td><td>Same as above; image slots reserve their space to prevent shifting.</td></tr>
+                <tr><th scope="row">WCAG 2.1 AA conformance</th><td>0 automated errors, full keyboard pass</td><td>Automated checker scan of every page plus a manual keyboard and screen reader review each release.</td></tr>
+                <tr><th scope="row">Mobile/desktop split</th><td>Tracked, with equal task success on both</td><td>Analytics device report. We expect most visits from phones, so task success must not drop on mobile.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ COMPATIBILITY NOTES ============ -->
+        <section id="compatibility" aria-labelledby="compatibility-title">
+          <h2 id="compatibility-title">Compatibility notes</h2>
+          <p>The site uses only standard HTML, CSS, and JavaScript. It needs no internet connection, no installation, and no web fonts, so it runs straight from the project folder on a laptop.</p>
+
+          <h3>Tested breakpoints</h3>
+          <div class="table-wrap" tabindex="0" role="region" aria-labelledby="breakpoints-caption">
+            <table class="data">
+              <caption id="breakpoints-caption">Layout checks at each breakpoint</caption>
+              <thead>
+                <tr><th scope="col">Breakpoint</th><th scope="col">Width tested</th><th scope="col">Layout</th><th scope="col">Result</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Desktop</th><td>1280px</td><td>Full navigation, three-column category cards, filter sidebar beside results, full month grid with event titles.</td><td>Pass</td></tr>
+                <tr><th scope="row">Tablet</th><td>768px</td><td>Menu button, two-column cards, collapsible filter panel, month grid with event titles.</td><td>Pass</td></tr>
+                <tr><th scope="row">Mobile</th><td>390px</td><td>Menu button, single-column cards, collapsible filters, compact month grid with event dots and a day list below.</td><td>Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Browsers</h3>
+          <ul>
+            <li>Tested: current Chromium-based browser (the engine behind Google Chrome and Microsoft Edge), light and dark themes, larger text on and off.</li>
+            <li>Before competition: re-check on the presentation laptop in Chrome, Edge, Safari, and Firefox, and confirm the site opens from the local folder without internet.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== SHARED FOOTER (identical on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <circle class="mark-bg" cx="20" cy="20" r="19"/>
+            <path class="mark-fg" d="M11 21l9-8 9 8v8H11z"/>
+            <path class="mark-fg" d="M20 29v-4.5a3.5 3.5 0 0 1 3.5-3.5"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">Common Ground</span></span>
+        </a>
+        <p>A free guide to health and human services for everyone in Maple Valley.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="footer-title">Explore</h2>
+        <ul class="footer-links">
+          <li><a href="browse.html">Browse resources</a></li>
+          <li><a href="events.html">Events calendar</a></li>
+          <li><a href="get-help.html">Get help</a></li>
+          <li><a href="about.html">About this project</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contact us</h2>
+        <address>
+          Common Ground Resource Desk<br>
+          120 Main Street, Suite 4<br>
+          Maple Valley, ST 00000<br>
+          <a href="tel:+15555550100">(555) 555-0100</a><br>
+          <a href="mailto:hello@commonground.example">hello@commonground.example</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="footer-title">Resource desk hours</h2>
+        <p>Monday–Friday, 9 AM–6 PM<br>Saturday, 10 AM–2 PM</p>
+        <p>Know a service we’re missing? <a href="mailto:hello@commonground.example?subject=Suggest%20a%20resource">Suggest a resource</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Common Ground. Created for the FBLA 2026–2027 Website Design event. All listings are fictional samples.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+  <!-- ===== END SHARED FOOTER ===== -->
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Common Ground | Maple Valley Community Resources</title>
+  <meta name="description" content="Find free and low-cost clinics, mental health support, food, senior services, health classes, jobs, and child care in Maple Valley.">
+  <!-- Inline favicon so no extra file request is made -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23A3214F'/%3E%3Cpath d='M11 21l9-8 9 8v8H11z' fill='none' stroke='white' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js"></script>
+</head>
+<body data-page="home">
+
+  <!-- ===== SHARED HEADER (identical on every page except aria-current) ===== -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="utility-bar" id="top">
+    <div class="container utility-inner">
+      <p class="crisis-note"><strong>In crisis?</strong> Call or text <a href="tel:988">988</a>. For emergencies call <a href="tel:911">911</a>.</p>
+      <div class="display-controls" role="group" aria-label="Display settings">
+        <button type="button" class="util-btn" id="text-toggle" aria-pressed="false"><span class="state" aria-hidden="true"></span>Larger text</button>
+        <button type="button" class="util-btn" id="theme-toggle" aria-pressed="false"><span class="state" aria-hidden="true"></span>Dark mode</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle class="mark-bg" cx="20" cy="20" r="19"/>
+          <path class="mark-fg" d="M11 21l9-8 9 8v8H11z"/>
+          <path class="mark-fg" d="M20 29v-4.5a3.5 3.5 0 0 1 3.5-3.5"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Common Ground</span>
+          <span class="brand-sub">Maple Valley community resources</span>
+        </span>
+      </a>
+      <button type="button" class="btn btn-ghost btn-sm nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="browse.html">Browse resources</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="btn btn-primary nav-cta" href="get-help.html">Get help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== END SHARED HEADER ===== -->
+
+  <main id="main">
+
+    <!-- HERO: headline, value proposition, search -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-intro">
+          <!-- Friendly characters: inline row on phones/tablets, floating on desktop -->
+          <div class="mascot-row" aria-hidden="true">
+            <svg class="mascot" focusable="false"><use href="#m-ghost"></use></svg>
+            <svg class="mascot" focusable="false"><use href="#m-blob"></use></svg>
+            <svg class="mascot" focusable="false"><use href="#m-drop"></use></svg>
+          </div>
+          <svg class="mascot mascot--float pos-left-top" aria-hidden="true" focusable="false"><use href="#m-ghost"></use></svg>
+          <svg class="mascot mascot--float pos-right-top" aria-hidden="true" focusable="false"><use href="#m-drop"></use></svg>
+          <svg class="mascot mascot--float pos-right-bottom" aria-hidden="true" focusable="false"><use href="#m-blob"></use></svg>
+
+          <h1 id="hero-title">Find care, food, and support close to home</h1>
+          <p class="hero-lead">One free guide to Maple Valley’s clinics, counselors, food pantries, and family services.</p>
+
+          <!-- Works without JavaScript: submits ?q= to the directory -->
+          <form class="hero-search" action="browse.html" method="get" role="search">
+            <label for="hero-q">What do you need help with?</label>
+            <div class="search-bar">
+              <div class="input-icon">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-search"></use></svg>
+                <input id="hero-q" name="q" type="search" placeholder="Try “dental”, “rides”, or “child care”" autocomplete="off">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+          </form>
+
+          <p class="quick-links-label" id="popular-label">Popular right now</p>
+          <ul class="quick-links" aria-labelledby="popular-label">
+            <li><a class="chip-link" href="browse.html?category=food">Food pantries</a></li>
+            <li><a class="chip-link" href="browse.html?category=clinics&amp;tags=noinsurance">Care without insurance</a></li>
+            <li><a class="chip-link" href="browse.html?category=mental">Counseling</a></li>
+            <li><a class="chip-link" href="browse.html?q=child%20care">Child care</a></li>
+          </ul>
+        </div>
+
+        <!-- PHOTO SLOTS 1–3 (see PHOTOS.md). Only the first shows on phones. -->
+        <div class="photo-strip">
+          <figure class="photo">
+            <!-- REPLACE the div below with:
+                 <img src="images/home-food-pantry.jpg" width="1200" height="900"
+                      alt="Volunteers handing bags of fresh produce to a neighbor at a community food pantry"> -->
+            <div class="photo-placeholder" role="img" aria-label="Volunteers handing bags of fresh produce to a neighbor at a community food pantry">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg>
+              <span class="photo-file">home-food-pantry.jpg</span>
+              <span class="photo-hint">Volunteers at a food pantry</span>
+            </div>
+          </figure>
+          <figure class="photo">
+            <!-- REPLACE with: <img src="images/home-clinic-visit.jpg" width="1200" height="900" loading="lazy"
+                 alt="A nurse talking with a smiling patient during a check-up at a community clinic"> -->
+            <div class="photo-placeholder" role="img" aria-label="A nurse talking with a smiling patient during a check-up at a community clinic">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg>
+              <span class="photo-file">home-clinic-visit.jpg</span>
+              <span class="photo-hint">Nurse and patient at a clinic</span>
+            </div>
+          </figure>
+          <figure class="photo">
+            <!-- REPLACE with: <img src="images/home-senior-walk.jpg" width="1200" height="900" loading="lazy"
+                 alt="An older adult and a young volunteer laughing together outside a senior center"> -->
+            <div class="photo-placeholder" role="img" aria-label="An older adult and a young volunteer laughing together outside a senior center">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg>
+              <span class="photo-file">home-senior-walk.jpg</span>
+              <span class="photo-hint">Senior and volunteer together</span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES: six featured resource categories -->
+    <section class="section section--surface" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="categories-title">Browse by what you need</h2>
+          <p>Every listing includes hours, contact details, and what it costs.</p>
+        </div>
+        <ul class="category-grid">
+          <li>
+            <article class="category-card">
+              <span class="badge tint-berry" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-clinic"></use></svg></span>
+              <h3><a class="stretched-link" href="browse.html?category=clinics">Clinics &amp; medical care</a></h3>
+              <p>Check-ups, dental care, vaccines, and prenatal visits, including care without insurance.</p>
+              <p class="category-count" data-count-for="clinics">3 resources</p>
+            </article>
+          </li>
+          <li>
+            <article class="category-card">
+              <span class="badge tint-sky" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-mental"></use></svg></span>
+              <h3><a class="stretched-link" href="browse.html?category=mental">Mental health</a></h3>
+              <p>Counseling, peer support groups, and someone to talk to when things feel heavy.</p>
+              <p class="category-count" data-count-for="mental">3 resources</p>
+            </article>
+          </li>
+          <li>
+            <article class="category-card">
+              <span class="badge tint-leaf" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-food"></use></svg></span>
+              <h3><a class="stretched-link" href="browse.html?category=food">Food security</a></h3>
+              <p>Food pantries, free community meals, and markets that match SNAP and WIC dollars.</p>
+              <p class="category-count" data-count-for="food">3 resources</p>
+            </article>
+          </li>
+          <li>
+            <article class="category-card">
+              <span class="badge tint-sky" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-seniors"></use></svg></span>
+              <h3><a class="stretched-link" href="browse.html?category=seniors">Senior &amp; disability services</a></h3>
+              <p>Accessible rides, daily meals, equipment loans, and help with Medicare.</p>
+              <p class="category-count" data-count-for="seniors">3 resources</p>
+            </article>
+          </li>
+          <li>
+            <article class="category-card">
+              <span class="badge tint-berry" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-education"></use></svg></span>
+              <h3><a class="stretched-link" href="browse.html?category=education">Health education</a></h3>
+              <p>Free classes on nutrition, prescriptions, and choosing health coverage.</p>
+              <p class="category-count" data-count-for="education">2 resources</p>
+            </article>
+          </li>
+          <li>
+            <article class="category-card">
+              <span class="badge tint-leaf" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-family"></use></svg></span>
+              <h3><a class="stretched-link" href="browse.html?category=family">Jobs &amp; child care</a></h3>
+              <p>Job training, resume help, child care assistance, and support for new parents.</p>
+              <p class="category-count" data-count-for="family">4 resources</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GET HELP BAND -->
+    <section class="band" aria-labelledby="band-title">
+      <div class="container">
+        <div class="band-inner">
+          <h2 id="band-title">Not sure where to start?</h2>
+          <p>Answer two quick questions and we’ll point you to services that fit.</p>
+          <a class="btn btn-light" href="get-help.html">Start the guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING EVENTS (filled from js/app.js) -->
+    <section class="section" aria-labelledby="events-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="events-title">Happening soon</h2>
+          <p>Free health fairs, classes, and community meals around Maple Valley.</p>
+        </div>
+        <ul class="event-list event-list--home" id="home-events">
+          <!-- Rendered by JavaScript. The line below only shows if scripts are off. -->
+          <li><p>See the <a href="events.html">events calendar</a> for upcoming dates.</p></li>
+        </ul>
+        <div class="section-foot">
+          <a class="btn btn-secondary" href="events.html">See the full calendar</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SHARED FOOTER (identical on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <circle class="mark-bg" cx="20" cy="20" r="19"/>
+            <path class="mark-fg" d="M11 21l9-8 9 8v8H11z"/>
+            <path class="mark-fg" d="M20 29v-4.5a3.5 3.5 0 0 1 3.5-3.5"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">Common Ground</span></span>
+        </a>
+        <p>A free guide to health and human services for everyone in Maple Valley.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="footer-title">Explore</h2>
+        <ul class="footer-links">
+          <li><a href="browse.html">Browse resources</a></li>
+          <li><a href="events.html">Events calendar</a></li>
+          <li><a href="get-help.html">Get help</a></li>
+          <li><a href="about.html">About this project</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contact us</h2>
+        <address>
+          Common Ground Resource Desk<br>
+          120 Main Street, Suite 4<br>
+          Maple Valley, ST 00000<br>
+          <a href="tel:+15555550100">(555) 555-0100</a><br>
+          <a href="mailto:hello@commonground.example">hello@commonground.example</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="footer-title">Resource desk hours</h2>
+        <p>Monday–Friday, 9 AM–6 PM<br>Saturday, 10 AM–2 PM</p>
+        <p>Know a service we’re missing? <a href="mailto:hello@commonground.example?subject=Suggest%20a%20resource">Suggest a resource</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Common Ground. Created for the FBLA 2026–2027 Website Design event. All listings are fictional samples.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+  <!-- ===== END SHARED FOOTER ===== -->
+
+</body>
+</html>

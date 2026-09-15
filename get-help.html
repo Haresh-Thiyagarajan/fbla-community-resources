@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Help | Common Ground</title>
+  <meta name="description" content="Answer two quick questions to find Maple Valley services that fit your needs.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23A3214F'/%3E%3Cpath d='M11 21l9-8 9 8v8H11z' fill='none' stroke='white' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js"></script>
+</head>
+<body data-page="help">
+
+  <!-- ===== SHARED HEADER (identical on every page except aria-current) ===== -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="utility-bar" id="top">
+    <div class="container utility-inner">
+      <p class="crisis-note"><strong>In crisis?</strong> Call or text <a href="tel:988">988</a>. For emergencies call <a href="tel:911">911</a>.</p>
+      <div class="display-controls" role="group" aria-label="Display settings">
+        <button type="button" class="util-btn" id="text-toggle" aria-pressed="false"><span class="state" aria-hidden="true"></span>Larger text</button>
+        <button type="button" class="util-btn" id="theme-toggle" aria-pressed="false"><span class="state" aria-hidden="true"></span>Dark mode</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle class="mark-bg" cx="20" cy="20" r="19"/>
+          <path class="mark-fg" d="M11 21l9-8 9 8v8H11z"/>
+          <path class="mark-fg" d="M20 29v-4.5a3.5 3.5 0 0 1 3.5-3.5"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Common Ground</span>
+          <span class="brand-sub">Maple Valley community resources</span>
+        </span>
+      </a>
+      <button type="button" class="btn btn-ghost btn-sm nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html">Browse resources</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="btn btn-primary nav-cta" href="get-help.html" aria-current="page">Get help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== END SHARED HEADER ===== -->
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <div class="mascot-row" aria-hidden="true">
+          <svg class="mascot" focusable="false"><use href="#m-ghost"></use></svg>
+        </div>
+        <svg class="mascot mascot--float pos-left-top" aria-hidden="true" focusable="false"><use href="#m-sprout"></use></svg>
+        <svg class="mascot mascot--float pos-right-top" aria-hidden="true" focusable="false"><use href="#m-ghost"></use></svg>
+        <h1 id="page-title">Get help</h1>
+        <p>Answer two quick questions and we’ll show you services that fit. It takes less than a minute.</p>
+      </div>
+    </section>
+
+    <div class="container help-layout">
+
+      <!-- GUIDED FLOW: options are built from the data in js/app.js -->
+      <form class="help-card" id="help-form" novalidate>
+        <div class="help-progress">
+          <p id="help-step-label">Step 1 of 3</p>
+          <ol class="progress-bar" aria-hidden="true">
+            <li class="is-done"></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+
+        <!-- Step 1 -->
+        <fieldset class="help-step" data-step="1" aria-describedby="need-hint need-error">
+          <legend class="help-legend" tabindex="-1">What are you looking for today?</legend>
+          <p class="field-hint" id="need-hint">Choose the one that fits best. You can change it later.</p>
+          <div class="tile-grid" id="need-options"></div>
+          <p class="field-error" id="need-error" role="alert" hidden>Choose an option to continue, or pick “I’m not sure yet.”</p>
+        </fieldset>
+
+        <!-- Step 2 -->
+        <fieldset class="help-step" data-step="2" aria-describedby="tags-hint" hidden>
+          <legend class="help-legend" tabindex="-1">Is there anything that would make it easier?</legend>
+          <p class="field-hint" id="tags-hint">Optional. Pick any that matter to you, or skip this step.</p>
+          <div class="chip-list" id="help-tags"></div>
+        </fieldset>
+
+        <!-- Step 3 -->
+        <div class="help-step" data-step="3" hidden>
+          <h2 class="help-legend" tabindex="-1">Here’s where to start</h2>
+          <div id="help-result" aria-live="polite"></div>
+        </div>
+
+        <div class="help-actions">
+          <button type="button" class="btn btn-ghost" id="help-back" hidden>Back</button>
+          <button type="submit" class="btn btn-primary" id="help-next">Next</button>
+        </div>
+
+        <noscript>
+          <p class="note">This guide needs JavaScript. You can still <a href="browse.html">browse all resources</a> or call (555) 555-0100.</p>
+        </noscript>
+      </form>
+
+      <!-- SIDEBAR + PHOTO SLOT 5 -->
+      <div class="aside-stack">
+        <figure class="photo photo--tall">
+          <!-- REPLACE the div below with:
+               <img src="images/help-resource-navigator.jpg" width="1000" height="1250" loading="lazy"
+                    alt="A community resource navigator helping a parent look up services on a laptop"> -->
+          <div class="photo-placeholder" role="img" aria-label="A community resource navigator helping a parent look up services on a laptop">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg>
+            <span class="photo-file">help-resource-navigator.jpg</span>
+            <span class="photo-hint">Navigator helping a parent</span>
+          </div>
+        </figure>
+        <aside class="aside-card" aria-labelledby="talk-title">
+          <h2 id="talk-title">Rather talk to a person?</h2>
+          <p>Our resource desk can help you find services and fill out forms.</p>
+          <p><a href="tel:+15555550100">(555) 555-0100</a><br>Monday–Friday, 9 AM–6 PM</p>
+          <p>In a crisis, call or text <a href="tel:988">988</a> any time.</p>
+        </aside>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== SHARED FOOTER (identical on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <circle class="mark-bg" cx="20" cy="20" r="19"/>
+            <path class="mark-fg" d="M11 21l9-8 9 8v8H11z"/>
+            <path class="mark-fg" d="M20 29v-4.5a3.5 3.5 0 0 1 3.5-3.5"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">Common Ground</span></span>
+        </a>
+        <p>A free guide to health and human services for everyone in Maple Valley.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="footer-title">Explore</h2>
+        <ul class="footer-links">
+          <li><a href="browse.html">Browse resources</a></li>
+          <li><a href="events.html">Events calendar</a></li>
+          <li><a href="get-help.html">Get help</a></li>
+          <li><a href="about.html">About this project</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contact us</h2>
+        <address>
+          Common Ground Resource Desk<br>
+          120 Main Street, Suite 4<br>
+          Maple Valley, ST 00000<br>
+          <a href="tel:+15555550100">(555) 555-0100</a><br>
+          <a href="mailto:hello@commonground.example">hello@commonground.example</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="footer-title">Resource desk hours</h2>
+        <p>Monday–Friday, 9 AM–6 PM<br>Saturday, 10 AM–2 PM</p>
+        <p>Know a service we’re missing? <a href="mailto:hello@commonground.example?subject=Suggest%20a%20resource">Suggest a resource</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Common Ground. Created for the FBLA 2026–2027 Website Design event. All listings are fictional samples.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+  <!-- ===== END SHARED FOOTER ===== -->
+
+</body>
+</html>
